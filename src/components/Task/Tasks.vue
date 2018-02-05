@@ -1,9 +1,19 @@
 <template>
 
-  <div>
-    <task-list :tasks="tasks"></task-list>
-    <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>                    
+  <div class="row">
+
+    <div class="cols-xs-6 col-md-6">
+        <task-list :tasks="tasks"></task-list>        
+        <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>                    
+    </div>
+
+    <div class="cols-xs-6 col-md-6">
+        <router-view></router-view>
+    </div>
+
+<!--
     <task-form @create="createTask"></task-form>
+-->
   </div>
 
 </template>

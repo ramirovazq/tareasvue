@@ -1,6 +1,6 @@
 <template>
                 <li @click="select"  class="list-group-item task-list-item" 
-                    :class="{completed: !task.pending}">
+                    :class="{active:isActive, completed: !task.pending}">
                     <a href="#" @click.stop="toggleStatus" >
                         <app-icon :img="task.pending ? 'unchecked' : 'check'"></app-icon></a>
 
@@ -22,12 +22,14 @@ export default {
                     };
                 },
                 props: ['task', 'index'],
+                computed: {
+                    isActive(){
+                        return this.task.id == this.$route.params.id;
+                    },
+                },
                 methods: {
                     select(){
-                        console.log("--------------------///");                        
-                        console.log("--------------------");
-                        console.log(this.task);
-                        this.$router.push('/tasks/' + this.task.id);
+                        this.$router.push(this.isActive ? '/tasks' : '/tasks/' + this.task.id);
                     },                    
                     toggleStatus(){
                         this.task.pending = !this.task.pending;
@@ -71,4 +73,9 @@ export default {
 .task-list-item.completed, .task-list-item.completed a {
     color: #999;
 }
+
+.task-list-item.active a {
+    color: white;
+}
+
 </style>

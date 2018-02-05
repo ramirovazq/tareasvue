@@ -38,7 +38,7 @@ export default {
 }
 
 .container {
-    max-width: 650px;
+    max-width: 920px;
 }
 
 .container h2 {

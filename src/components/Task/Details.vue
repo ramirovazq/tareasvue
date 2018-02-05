@@ -1,6 +1,6 @@
 <template>
   <div>
-  <h2>Detalle de tarea ... {{id}}</h2>
+  <h2>{{id}} {{task.title}}</h2>
   <p>{{task.description}}</p>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     findTask(){
-      this.task = store.state.tasks.find( task => task.id == this.id);
+      this.task = store.findTask(this.id);
     }
   }//methods
 }

@@ -29,7 +29,8 @@ export default {
                 },
                 methods: {
                     select(){
-                        this.$router.push(this.isActive ? '/tasks' : '/tasks/' + this.task.id);
+                        // this.$router.push(this.isActive ? '/tasks' : '/tasks/' + this.task.id);
+                        this.$router.push(this.isActive ? {name: 'tasks'} : {name: 'tasks.details', params: {id: this.task.id}});
                     },                    
                     toggleStatus(){
                         this.task.pending = !this.task.pending;

@@ -8,9 +8,11 @@ import NotFound from 'components/errors/NotFound.vue'
 Vue.use(Router)
 
 var router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
+      name: "dashboard",
       component: Dashboard 
     },
     {
@@ -19,12 +21,14 @@ var router = new Router({
       children: [
         {
           path: '',
+          name: "tasks",          
           component: {
             template: "<h2>Por favor, selecciona una tarea.</h2>"
           }
         },
         {
           path: ':id',
+          name: "tasks.details",
           component: TaskDetails,
           props: true
         }
@@ -32,6 +36,7 @@ var router = new Router({
     },
     {
       path: '/404',
+      name: "not.found",
       component: NotFound,
     },    
     {

@@ -1,7 +1,7 @@
 <template>
   <div>
   <h2>404 Página No encontrada</h2>
-    <router-link  to="/" >Regresar al dashboard</router-link>
+    <router-link  :to="{name: 'nof.found'}" >Regresar al dashboard</router-link>
   </div>
 </template>
 

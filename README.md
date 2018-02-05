@@ -1,6 +1,6 @@
-# formulario_simple
+# Tareas front-end Vue
 
-> Formulario con los datos del paciente
+> Listado de tareas por hacer con Vue
 
 ## Build Setup
 
